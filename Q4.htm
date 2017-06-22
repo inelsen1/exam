@@ -35,7 +35,26 @@
 		</style>
 
 		<script type="text/javascript">
-
+		function celtics(){
+			var x=document.getElementById("img1");
+			x.src = "celtics.png";
+		}
+		function patriots(){
+			var y=document.getElementById("img1");
+			y.src = "patriots.jpg";
+		}
+		function red(id) {
+			var a = document.getElementById(id);
+			a.style.borderColor = "red";
+			var newcolor = parseInt(w);
+			i.color = newcolor * "red";
+		}
+		function black(id){
+			var b = document.getElementById(id);
+			a.style.borderColor = "black";
+			var newcolor = parseInt(w);
+			i.color = newcolor * "black";
+		}
 		</script>
 
 	</head>
@@ -53,11 +72,11 @@
 		</p>
 		<hr>
 		<p>
-			<img src="" alt="" title="This is the image" width="100" height="100" />
+			<img onmouseover="red(this.id)" onmouseout="black(this.id)" id="img1" src="" alt="" title="This is the image" width="100" height="100" />
 		</p>
 		<p >
-			<input type="button" value="Celtics" />
-			<input type="button" value="Patriots" />
+			<button id="celtic" onclick="celtics()"><input type="button" value="Celtics" /> </button>
+			<button id="patriot" onclick="patriots()"><input type="button" value="Patriots" /> </button>
 		</p>
 
 

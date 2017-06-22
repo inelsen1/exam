@@ -32,7 +32,28 @@
             }
         </style>
         <script>
+    function clearDisplay() {
+    
+    var display = document.getElementById("display");
 
+    displayNum = "";
+    storedNum = "";
+    operation = 0;
+    queuedOperation = 0;        
+    display.value = displayNum;
+
+}
+    function arraySum(i) {
+    var sum=0; 
+    for(var a=0;a<i.length;a++){ 
+        if(typeof i[a]=="number"){
+            sum+=i[a];
+        }else if(i[a] instanceof Array){
+            sum+=arraySum(i[a]);
+        }
+    }
+    return sum;
+}
         </script>
     </head>
 
@@ -59,8 +80,8 @@
 
             </p>
             <p>
-                <input type="submit" name="Sum" value="SUM">
-                <input type="reset" name="reset" value="CLEAR">
+                <button onclick="arraySum()">Submit<input type="submit" name="Sum" value="SUM"></button>
+                <button onclick="clearDisplay()">Clear<input type="reset" name="reset" value="CLEAR"></button>
             </p>
             <p>The sum is <span id="result"></span>.</p>
         </form>

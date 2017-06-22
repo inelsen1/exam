@@ -44,7 +44,9 @@
         </style>
 
         <script type="text/javascript">
-
+function LengthConverter(valNum) {
+  document.getElementById("outputMiles").innerHTML=valNum*0.62137;
+}
         </script>
     </head>
 
@@ -65,8 +67,12 @@
         <h2> Convert and Smile </h2>
         <form method="post">
             <p>
-
-                Kilometers: <input type="text" name="km" size="10" /> Miles: <input type="text" name="m" size="10" />
+<p>
+  <label>Kilometers</label>
+  <input id="inputKilometers" type="number" placeholder="Kilometers" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+</p>
+<p>Miles: <span id="outputMiles"></span></p>
+                
 
             </p>
             <p>
